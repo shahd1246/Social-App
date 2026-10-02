@@ -94,7 +94,7 @@ export default function Register() {
 
   return (
     <div>
-      <div className="bg-gray-200 py-9 flex justify-center h-screen ">
+      <div className="bg-gray-200 py-9 flex justify-center min-h-screen ">
         <div className="lg:w-1/2 w-full bg-white h-fit rounded-lg lg:mx-auto mx-9 py-5">
           <h2 className="text-sky-600 font-bold text-2xl text-center">
             Register Now
