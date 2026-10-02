@@ -78,7 +78,7 @@ export default function Register() {
         if (response.data.message === "account created") {
           setApiSucess(response?.data.message);
           setUserToken(response?.data.data.token);
-           setUserData(response.data.data.user);
+          setUserData(response.data.data.user);
           localStorage.setItem("token", response.data.data.token);
           navigate("/");
         }
@@ -241,22 +241,33 @@ export default function Register() {
                 </p>
               ) : null}
             </div>
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
+            <div className="grid lg:grid-cols-2 items-center grid-cols-1 gap-5">
               <div>
-                <Input
+                <label
+                  htmlFor="dateOfBirth"
+                  className="block mb-2 text-sm font-medium text-gray-700"
+                >
+                  Date of Birth
+                </label>
+
+                <input
                   {...register("dateOfBirth")}
+                  id="dateOfBirth"
                   type="date"
-                  aria-label="dateOfBirth"
-                  className="w-full"
-                  placeholder="Date Of Birth"
+                  lang="en"
+                  aria-label="Date of Birth"
+                  className="block w-full rounded-xl border border-gray-300
+      bg-white px-3 py-3 text-gray-900 shadow-sm
+      focus:border-sky-600 focus:outline-none
+      focus:ring-2 focus:ring-sky-600"
                 />
 
                 {formState.errors.dateOfBirth &&
-                formState.touchedFields.dateOfBirth ? (
-                  <p className="text-sm pt-2 pl-2 text-red-500">
-                    {formState.errors.dateOfBirth?.message}
-                  </p>
-                ) : null}
+                  formState.touchedFields.dateOfBirth && (
+                    <p className="text-sm pt-2 pl-2 text-red-500">
+                      {formState.errors.dateOfBirth.message}
+                    </p>
+                  )}
               </div>
               <div>
                 <select
