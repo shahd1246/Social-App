@@ -10,10 +10,8 @@ export let schema = zod
     username: zod
       .string()
       .nonempty("User Name is Required")
-      .regex(
-        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/,
-        
-      ),
+      .regex(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W_]{5,}$/),
+
     email: zod.string().nonempty("Email is Required").email("Invalid Email"),
     password: zod
       .string()
