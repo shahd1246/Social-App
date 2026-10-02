@@ -35,7 +35,10 @@ export default function Register() {
     },
     {
       label: "One letter",
-      valid: /[A-Z]/.test(userName) || /[a-z]/.test(userName),
+      valid:
+        /[A-Z]/.test(userName) ||
+        /[a-z]/.test(userName) ||
+        /[#?!@$%^&*-]/.test(userName),
     },
     {
       label: "One number (0-9)",
